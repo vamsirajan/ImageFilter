@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://bootswatch.com/5/quartz/bootstrap.min.css"> 
+    <link rel="stylesheet" href="img_styles.css">
+    <title>Image filter</title>
+</head>
+
+<body>
+    <!-- navbar from bootstrap  -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">ImageFilter</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="imgfilter.html">Image Filter</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="intimgfilter.html" target="_blank">Int Image Filter</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="advfilter.html" target="_blank">Adv Image Filter</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html" target="_blank">About Us</a>
+                    </li>
+
+                    <!--
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    </li>  -->
+
+
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- Done with the navbar part need to adjust both the file upload part and the filters options -->
+    <div class="container my-4">
+        <div class="row">
+            <!-- we place a 10 column div here -->
+            <!-- m-auto to push it to the middle -->
+            <div class="col-md-10 m-auto">
+                <!-- bootstrap file upload class -->
+                <div class="custom-file mb-3">
+                    <input type="file" class="custom-file-input" id="upload-file">
+                    <label for="upload-file" class="custom-file-label"></label>
+                </div>
+
+                <!-- canvas element -->
+                <!-- Helps us in display of the uploaded image -->
+                <canvas id="canvas"></canvas>
+                <h4 class="text-center my-3">Filters</h4>
+
+                <div class="row text-center my-4">
+                    <!-- we place 4 3 col divs in here -->
+
+                    <!-- 1st one (Brightness)-->
+                    <div class="col-md-3">
+                        <!-- need to place - label + sign  -->
+                        <div class="btn-group btn-group-sm">
+                            <button class="filter-btn brightness-remove btn btn-info">-</button>
+                            <button class="btn btn-secondary btn-disabled" disabled>Brightness</button>
+                            <button class="filter-btn brightness-add btn btn-info">+</button>
+                        </div>
+                    </div>
+
+                    <!-- 2nd one (Contrast) -->
+                    <div class="col-md-3">
+                        <!-- need to place - label + sign  -->
+                        <div class="btn-group btn-group-sm">
+                            <button class="filter-btn contrast-remove btn btn-info">-</button>
+                            <button class="btn btn-secondary btn-disabled" disabled>Contrast</button>
+                            <button class="filter-btn contrast-add btn btn-info">+</button>
+                        </div>
+                    </div>
+
+                    <!-- 3rd one (Saturation)-->
+                    <div class="col-md-3">
+                        <!-- need to place - label + sign  -->
+                        <div class="btn-group btn-group-sm">
+                            <button class="filter-btn saturation-remove btn btn-info">-</button>
+                            <button class="btn btn-secondary btn-disabled" disabled>Saturation</button>
+                            <button class="filter-btn saturation-add btn btn-info">+</button>
+                        </div>
+                    </div>
+
+                    <!-- 4th one (Vibrance)-->
+                    <div class="col-md-3">
+                        <!-- need to place - label + sign  -->
+                        <div class="btn-group btn-group-sm">
+                            <button class="filter-btn vibrance-remove btn btn-info">-</button>
+                            <button class="btn btn-secondary btn-disabled" disabled>Vibrance</button>
+                            <button class="filter-btn vibrance-add btn btn-info">+</button>
+                        </div>
+                    </div>
+
+
+                </div>
+                <!--the row ends here -->
+
+                <div class="row text-center my-4">
+                    <!-- we place 4 3 col divs in here -->
+
+                    <!-- 5th one (Exposure)-->
+                    <div class="col-md-3">
+                        <!-- need to place - label + sign  -->
+                        <div class="btn-group btn-group-sm">
+                            <button class="filter-btn exposure-remove btn btn-info">-</button>
+                            <button class="btn btn-secondary btn-disabled" disabled>Exposure</button>
+                            <button class="filter-btn exposure-add btn btn-info">+</button>
+                        </div>
+                    </div>
+
+                    <!-- 6th one (Noise) -->
+                    <div class="col-md-3">
+                        <!-- need to place - label + sign  -->
+                        <div class="btn-group btn-group-sm">
+                            <button class="filter-btn noise-remove btn btn-info" disabled>-</button>
+                            <button class="btn btn-secondary btn-disabled" disabled>Noise</button>
+                            <button class="filter-btn noise-add btn btn-info">+</button>
+                        </div>
+                    </div>
+
+                    <!-- 3rd one (sharpen)-->
+                    <div class="col-md-3">
+                        <!-- need to place - label + sign  -->
+                        <div class="btn-group btn-group-sm">
+                            <button class="filter-btn sharpen-remove btn btn-info" disabled>-</button>
+                            <button class="btn btn-secondary btn-disabled" disabled>Sharpen</button>
+                            <button class="filter-btn sharpen-add btn btn-info">+</button>
+                        </div>
+                    </div>
+
+                    <!-- 4th one (blur)-->
+                    <div class="col-md-3">
+                        <!-- need to place - label + sign  -->
+                        <div class="btn-group btn-group-sm">
+                            <button class="filter-btn blur-remove btn btn-info" disabled>-</button>
+                            <button class="btn btn-secondary btn-disabled" disabled>Blur</button>
+                            <button class="filter-btn blur-add btn btn-info">+</button>
+                        </div>
+                    </div>
+
+
+                </div>
+                <!--the row ends here -->
+
+                <h4 class="text-center my-3">Effects</h4>
+                <!-- Effects  -->
+                <div class="row mb-3">
+                    <div class="col-md-3">
+                        <button class="filter-btn vintage-add btn btn-dark btn-block">Vintage</button>
+                    </div>
+
+                    <div class="col-md-3">
+                        <button class="filter-btn lomo-add btn btn-dark btn-block">Lomo</button>
+                    </div>
+
+                    <div class="col-md-3">
+                        <button class="filter-btn clarity-add btn btn-dark btn-block">Clarity</button>
+                    </div>
+
+                    <div class="col-md-3">
+                        <button class="filter-btn sincity-add btn btn-dark btn-block">Sin City</button>
+                    </div>
+
+                    <!-- not placing any remove effects individually -->
+
+
+                </div> <!-- Row ends here-->
+
+                <div class="row mb-3">
+                    <div class="col-md-3">
+                        <button class="filter-btn crossprocess-add btn btn-dark btn-block">Cross Process</button>
+                    </div>
+
+                    <div class="col-md-3">
+                        <button class="filter-btn pinhole-add btn btn-dark btn-block">Pinhole</button>
+                    </div>
+
+                    <div class="col-md-3">
+                        <button class="filter-btn nostalgia-add btn btn-dark btn-block">Nostalgia</button>
+                    </div>
+
+                    <div class="col-md-3">
+                        <button class="filter-btn hermajesty-add btn btn-dark btn-block">Her majesty</button>
+                    </div>
+
+                    <!-- not placing any remove effects individually -->
+
+
+                </div> <!-- Row ends here-->
+
+                <!-- now left with both download and remove filters button  -->
+                <div class="row my-5">
+                    <div class="col-md-6">
+                        <button id="download-btn" class="btn btn-primary btn-block">Download</button>
+                    </div>
+
+                    <div class="col-md-6">
+                        <button id="revert-btn" class="btn btn-danger btn-block">Remove Filters</button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="container">
+        <p class="float-end"><a href="imgfilter.html">Back to top</a></p>
+        <p>&copy; 2021 ImageFilter, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    </footer>
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js" integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ" crossorigin="anonymous"></script>
+    -->
+
+    <!-- Need to add both scripts.js and camanjs  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/camanjs/4.1.2/caman.full.min.js"
+        integrity="sha512-JjFeUD2H//RHt+DjVf1BTuy1X5ZPtMl0svQ3RopX641DWoSilJ89LsFGq4Sw/6BSBfULqUW/CfnVopV5CfvRXA=="
+        crossorigin="anonymous"></script>
+    <script src="imgscript.js"></script>
+</body>
+
+</html>

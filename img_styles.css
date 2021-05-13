@@ -1,0 +1,13 @@
+/* styling the canvas,the place holder */
+#canvas {
+    margin: auto;
+    background: lightgrey;
+    width: 100%;
+}
+
+/* disabled buttons */
+.btn-disabled {
+     color:black !important;
+}
+
+

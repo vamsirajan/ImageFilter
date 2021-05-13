@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+
+    <title>Image Filter - Filter Your Way!!!</title>
+</head>
+
+<body>
+    <!-- navbar from bootstrap  -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">ImageFilter</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="imgfilter.html" target="_blank">Image Filter</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="intimgfilter.html" target="_blank">Int Image Filter</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="advfilter.html" target="_blank">Adv Image Filter</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html" target="_blank">About Us</a>
+                    </li>
+
+                    <!--
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    </li>  -->
+
+
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <div class="alert alert-primary" role="alert">
+        Image Filter is a WebApp built with the help of various JS libraries which gives us several functionalities as
+        shown below. Enjoy filtering :)
+    </div>
+
+    <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://source.unsplash.com/1400x400/?nature,water" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Capture</h5>
+                    <p>Capture the best moments without any hassle...!</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://source.unsplash.com/1400x400/?nature,waterfalls" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Upload</h5>
+                    <p>Upload them onto our site to filter...</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://source.unsplash.com/1400x400/?nature,smile" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Filter</h5>
+                    <p>Live the moment!!!</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+
+    <!-- Button trigger modal -->
+    <div class="container my-4">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            Overview
+        </button>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">What to expect from each filter?</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h2>Image Filter</h2>
+                        <b>Brightness </b>- defined as the amount of energy output by a source of light relative to the
+                        source we are comparing it to. <br>
+                        <b>Contrast</b> - difference between maximum and minimum pixel intensity in an image.<br>
+                        <b>Saturation</b> - strength or purity of the color and represents the amount of gray in
+                        proportion to the hue.<br>
+                        <b>Vibrance</b> - A smart-tool which increases the intensity of the more muted colors, leaving
+                        saturated colors alone,also prevents skin tones from becoming overly saturated and unnatural.
+                        <br>
+                        <b>Exposure</b> - It is the amount of light per unit area reaching a frame of photographic
+                        film or the surface of an electronic image sensor, as determined by shutter speed, lens
+                        aperture, and scene luminance. <br>
+                        <b>Noise</b> - A random variation of brightness or color information in images. <br>
+                        <b>Sharpness</b> - Refers to an image's overall clarity in terms of both focus and contrast.
+                        <br>
+                        <b>Blur</b> - Make indistinct and hazy in outline or appearance. <br>
+                        <hr class="dropdown-divider">
+                        <h2>Intermediate Image Filter</h2>
+                        Several Inbuilt Blending modes <br>
+                        <b>Normal,Multiply,Screen,Overlay,Difference,Addition,Exclusion,Softlight,Lighten,Darken</b>
+                        <br>
+                        <hr class="dropdown-divider">
+                        <h2>Advanced Image Filter</h2>
+                        Several customized Blend Modes 
+                        <b>MaxRGB,MinRGB,Greyscale,Threshold</b>
+                    </div>
+                    <div class="modal-footer">
+                        <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Understood</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card text-center">
+        <div class="card-header">
+            Image Filter
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Project By</h5>
+            <p class="card-text"><b>Group13</b></p>
+            <a href="about.html" class="btn btn-primary" target="_blank">AboutUs</a>
+        </div>
+        <div class="card-footer text-muted">
+            Submitted on 13th May
+        </div>
+    </div>
+
+    <footer class="container">
+        <p class="float-end"><a href="index.html">Back to top</a></p>
+        <p>&copy; 2021 ImageFilter, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    </footer>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js" integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
